@@ -94,12 +94,14 @@ p {
   &-text {
     display: flex;
     flex-direction: column;
+    max-width: 512px;
   }
 
   &-header {
     font-weight: 800;
     font-size: 64px;
     color: #000;
+    line-height: 64px;
   }
 
   &-subheader {
@@ -189,14 +191,27 @@ p {
       right: 0;
     }
 
-    // &::before {
-    //   content: '';
-    //   background: url('../icons/promo-arrow.svg');
-    //   position: absolute;
-    //   min-width: 113px;
-    //   height: 169px;
-    //   bottom: 50px;
-    //   left: -50;
-    // }
+    &::before {
+      content: '';
+      background: url(../icons/promo-arrow.svg) center center / contain
+        no-repeat;
+      position: absolute;
+      width: 180px;
+      height: 169px;
+      bottom: 50px;
+      left: -185px;
+      transform: rotate(11deg);
+    }
+
+    &::after {
+      content: '';
+      background: url(../icons/promo-arrow-right.svg) center center / contain
+        no-repeat;
+      position: absolute;
+      width: 113px;
+      height: 156px;
+      top: -100px;
+      right: -50px;
+    }
   }
 }
