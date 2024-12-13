@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 ul,
@@ -25,4 +27,57 @@ h6 {
 p {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.menu {
+  margin: 45px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+
+  &-logo {
+    max-width: 142px;
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 96px;
+  }
+
+  &-nav {
+    display: flex;
+    width: 315px;
+    justify-content: space-between;
+
+    &-elem {
+      font-weight: 500;
+      font-size: 18px;
+
+      a {
+        text-decoration: none;
+        color: #1e1e1e;
+      }
+    }
+  }
+
+  &-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 216px;
+
+    &-divider {
+      display: block;
+      width: 1px;
+      height: 24px;
+      background-color: #000;
+    }
+  }
 }
