@@ -226,6 +226,8 @@ p {
       z-index: 2;
       bottom: 0;
       right: 0;
+      max-width: 411px;
+      max-height: 513px;
     }
 
     &::before {
