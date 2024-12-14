@@ -59,10 +59,32 @@ p {
     &-elem {
       font-weight: 500;
       font-size: 18px;
+      position: relative;
+      cursor: pointer;
 
       a {
         text-decoration: none;
         color: #1e1e1e;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #c1dcdc;
+        }
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: #c1dcdc;
+        transition: width 0.3s ease;
+      }
+
+      &:hover:after {
+        width: 100%;
       }
     }
   }
@@ -142,6 +164,8 @@ p {
       height: 64px;
       padding: 8px 8px 8px 18px;
       background-color: #fff;
+      overflow: hidden;
+      transition: all 0.3s ease;
 
       input {
         font-weight: 500;
@@ -152,7 +176,7 @@ p {
         border: none;
       }
 
-      span {
+      .search-icon-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -160,6 +184,9 @@ p {
         width: 48px;
         height: 48px;
         background-color: #c1dcdc;
+        position: absolute;
+        right: 8px;
+        transition: all 0.3s ease;
 
         a {
           display: flex;
@@ -168,8 +195,18 @@ p {
 
           img {
             max-width: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
           }
         }
+      }
+
+      &:focus-within .search-icon-wrapper {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      &:focus-within input {
+        padding-right: 18px;
       }
     }
   }
@@ -258,8 +295,22 @@ p {
     text-decoration: none;
     color: #1e1e1e;
 
-    img {
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    .arrow-icon {
       max-width: 21px;
+      transition: all 0.3s ease;
+      color: #1e1e1e;
+    }
+
+    &:hover {
+      background-color: #1e1e1e;
+      color: #c1dcdc;
+
+      .arrow-icon {
+        color: #c1dcdc;
+        transform: translateX(6px);
+      }
     }
   }
 
@@ -428,18 +479,30 @@ p {
       justify-content: space-between;
       align-items: center;
       width: 147px;
-      height: 51;
+      height: 51px;
       border-radius: 8px;
       padding: 12px 24px;
       background-color: #fff;
-
       font-weight: 500;
       font-size: 18px;
       text-decoration: none;
       color: #1e1e1e;
+      transition: background-color 0.3s ease, color 0.3s ease;
 
-      img {
+      .arrow-icon {
         max-width: 21px;
+        transition: all 0.3s ease;
+        color: #1e1e1e;
+      }
+
+      &:hover {
+        background-color: #1e1e1e;
+        color: #fff;
+
+        .arrow-icon {
+          color: #fff;
+          transform: translateX(6px);
+        }
       }
     }
 
@@ -637,11 +700,16 @@ p {
       li {
         font-weight: 400;
         font-size: 18px;
-        opacity: 50%;
 
         a {
           color: #1e1e1e;
+          opacity: 50%;
           text-decoration: none;
+          transition: 0.3s opacity ease;
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }
