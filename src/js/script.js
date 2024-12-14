@@ -99,3 +99,99 @@ likeButtons.forEach((button) => {
     }
   });
 });
+
+// Search Panel
+
+const products = [
+  {
+    id: 1,
+    name: 'Crimson Bloom',
+    price: '$10.00',
+    img: './img/products/products-1.jpg',
+  },
+  {
+    id: 2,
+    name: 'Springlight',
+    price: '$16.00',
+    img: './img/products/products-2.jpg',
+  },
+  {
+    id: 3,
+    name: 'Verdant Charm',
+    price: '$14.00',
+    img: './img/products/products-3.jpg',
+  },
+  {
+    id: 4,
+    name: 'Cactus Sentinel',
+    price: '$16.00',
+    img: './img/products/products-4.jpg',
+  },
+  {
+    id: 5,
+    name: 'Ethereal Wave',
+    price: '$12.00',
+    img: './img/products/products-5.jpg',
+  },
+  {
+    id: 6,
+    name: 'Desert Sunset',
+    price: '$10.00',
+    img: './img/products/products-6.jpg',
+  },
+  {
+    id: 7,
+    name: "Nature's Embrace",
+    price: '$14.00',
+    img: './img/products/products-7.jpg',
+  },
+  {
+    id: 8,
+    name: 'Emerald Grace',
+    price: '$16.00',
+    img: './img/products/products-8.jpg',
+  },
+];
+
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase().trim();
+  searchResults.innerHTML = '';
+
+  if (query) {
+    const filteredProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(query)
+    );
+
+    if (filteredProducts.length > 0) {
+      filteredProducts.forEach((product) => {
+        const resultItem = document.createElement('div');
+        resultItem.classList.add('result-item');
+        resultItem.innerHTML = `
+          <img src="${product.img}" alt="${product.name}" />
+          <div class="result-info">
+            <div class="result-name">${product.name}</div>
+            <div class="result-price">${product.price}</div>
+          </div>
+        `;
+        searchResults.appendChild(resultItem);
+      });
+      searchResults.style.display = 'block';
+    } else {
+      searchResults.style.display = 'none';
+    }
+  } else {
+    searchResults.style.display = 'none';
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (
+    !searchResults.contains(event.target) &&
+    !searchInput.contains(event.target)
+  ) {
+    searchResults.style.display = 'none';
+  }
+});

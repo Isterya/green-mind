@@ -6,7 +6,176 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Document</title>
+    <title>Green Mind</title>
+    <link
+      rel="stylesheet"
+      href="./css/contacts.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="menu">
+        <div class="menu-wrapper">
+          <div class="menu-logo">
+            <a href="/">
+              <img
+                src="./icons/logo.svg"
+                alt="logotype"
+              />
+            </a>
+          </div>
+
+          <ul class="menu-nav">
+            <li class="menu-nav-elem">
+              <a href="/">Home</a>
+            </li>
+            <li class="menu-nav-elem">
+              <a href="./products.html">Products</a>
+            </li>
+            <li class="menu-nav-elem menu-nav-elem-active">
+              <a href="./contacts.html">Contacts</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-icons">
+          <a href="#">
+            <img
+              src="./icons/cart.svg"
+              alt="cart"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="./icons/person.svg"
+              alt="person"
+            />
+          </a>
+          <div class="menu-icons-divider"></div>
+          <a href="#">
+            <img
+              src="./icons/menu.svg"
+              alt="menu-hamburger"
+            />
+          </a>
+        </div>
+      </header>
+
+      <section class="contact">
+        <div class="contact-container">
+          <div class="contact-image"></div>
+          <div class="contact-form">
+            <h2>Your Feedback Is Much Appreciated!</h2>
+            <p>We will contact you when you complete the following form!</p>
+            <form>
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+              />
+
+              <label for="email">Your Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email Address"
+              />
+
+              <label for="topic">Topic</label>
+              <input
+                type="text"
+                id="topic"
+                placeholder="Topic"
+              />
+
+              <label for="message">Your Message</label>
+              <textarea
+                id="message"
+                placeholder="Your Message"
+              ></textarea>
+
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-wrapper">
+          <div class="footer-info">
+            <a href="/">
+              <img
+                class="footer-info__img"
+                src="./icons/logo.svg"
+                alt="footer-logotype"
+              />
+            </a>
+            <p class="footer-info__descr">We help you find your dream plant</p>
+            <ul class="footer-info__list">
+              <li>
+                <a href="#">
+                  <img
+                    src="./icons/social/facebook.svg"
+                    alt="facebook"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="./icons/social/inst.svg"
+                    alt="instagram"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="./icons/social/twitter.svg"
+                    alt="twitter"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-links-wrap">
+              <h3 class="footer-links__title">Go back home?</h3>
+              <ul class="footer-links__list">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-links-wrap">
+              <h3 class="footer-links__title">Plant Catalog</h3>
+              <ul class="footer-links__list">
+                <li>
+                  <a href="./products.html">Products</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-links-wrap">
+              <h3 class="footer-links__title">Get in touch</h3>
+              <ul class="footer-links__list">
+                <li>
+                  <a href="./contacts.html">Contacts</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer-rights">
+          2024 all Right Reserved Term of use GREENMIND
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
