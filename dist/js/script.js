@@ -60,3 +60,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initializeSlider();
 });
+
+// likes
+
+const likeButtons = document.querySelectorAll('.like');
+
+function saveLikesToLocalStorage(productId, isLiked) {
+  const likedItems = JSON.parse(localStorage.getItem('likedItems')) || {};
+  likedItems[productId] = isLiked;
+  localStorage.setItem('likedItems', JSON.stringify(likedItems));
+}
+
+function restoreLikesFromLocalStorage() {
+  const likedItems = JSON.parse(localStorage.getItem('likedItems')) || {};
+  likeButtons.forEach((button) => {
+    const productId = button.getAttribute('data-id');
+    if (likedItems[productId]) {
+      button.classList.add('active');
+    }
+  });
+}
+
+restoreLikesFromLocalStorage();
+
+likeButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('active');
+
+    const productId = button.getAttribute('data-id');
+    const isLiked = button.classList.contains('active');
+
+    saveLikesToLocalStorage(productId, isLiked);
+
+    if (isLiked) {
+      console.log(`Product ${productId} added to favorites`);
+    } else {
+      console.log(`Product ${productId} removed from favorites`);
+    }
+  });
+});
